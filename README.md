@@ -10,7 +10,7 @@ You can use this VM to compile Maui applications for mac or ios.
 ## MacOS installed with the following version:
 ![image](https://user-images.githubusercontent.com/9571002/211018450-4197456b-0843-4fed-9845-722108598666.png)
 ## VMWare WorkStation installed with the following version:
-![image](https://user-images.githubusercontent.com/9571002/211018519-43550bb4-7aad-4f6e-97c2-3c27ed0860ec.png)
+![image](https://user-images.githubusercontent.com/9571002/211021076-698c7c39-daf8-408b-aa56-d0b2d73247f4.png)
 ## After installing VMware WorkStation, run the win-install.cmd file from the unlocker folder to activate macOS for your VMware WorkStation
 ![image](https://user-images.githubusercontent.com/9571002/211018564-668c0fcb-f63d-4e78-8f11-25da15baeb3d.png)
 
