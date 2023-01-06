@@ -25,6 +25,6 @@ You can use this VM to compile Maui applications for mac or ios.
 %LocalAppData%\Xamarin
 
 ## MacOS Username and Password :
-username : develoepr
-password : developer
+username: developer
+password: developer
 
