@@ -1,6 +1,12 @@
 # MacOS VM For Maui
 You can use this VM to compile Maui applications for mac or ios.
 
+1. https://mega.nz/folder/mBxGXb4Q#yoBfrjTncVCIfDQbz-gvMQ
+2. https://mega.nz/folder/eV4DwKZK#vczFgfDD6LBA2W58UxqBgQ
+3. https://mega.nz/folder/3cRWDRCQ#LXMXEmyU6PyhpSpi1RyS7A
+4. https://mega.nz/folder/4Jpl3bLa#wNpaXYa31Lz76V1kzMXINg
+5. https://mega.nz/folder/WQQRwJwA#955VLb9qnm4q6va1tnArnA
+
 ## MacOS installed with the following version:
 ![image](https://user-images.githubusercontent.com/9571002/211018450-4197456b-0843-4fed-9845-722108598666.png)
 ## VMWare WorkStation installed with the following version:
@@ -18,4 +24,7 @@ You can use this VM to compile Maui applications for mac or ios.
 
 %LocalAppData%\Xamarin
 
+## MacOS Username and Password :
+username : develoepr
+password : developer
 
