@@ -13,7 +13,9 @@ You can use this VM to compile Maui applications for mac or ios.
 ## After importing the OVF in VMWare WorkStation, go into the VM settings and select “Apple MacOSX” and “macOS12” versions according to the image below.
 ![image](https://user-images.githubusercontent.com/9571002/211018619-c867d9f8-0a8f-416b-bf99-fb25a6b849af.png)
 ## Before opening Visual Studio and connecting to macOS, delete all folders at the following address :
-%LocalAppData%\Xamarin
+
 ![image](https://user-images.githubusercontent.com/9571002/211018673-56458ed4-e7a5-4073-b913-2241501e1d67.png)
+
+%LocalAppData%\Xamarin
 
 
