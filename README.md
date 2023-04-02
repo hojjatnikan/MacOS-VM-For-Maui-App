@@ -30,5 +30,6 @@ password: developer
 
 ## MacOS dotNet library for build Maui project(Version 7 and 6 of dotnet)
 https://mega.nz/folder/6MZwDIoD#hriCSI54wmBXKo8k0sxqDw
+
 Please just copy/past "dotnet" folder into /usr/local/share of your MacOS
 
