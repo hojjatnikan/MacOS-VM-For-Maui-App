@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>Microsoft.NET.Runtime.MonoTargets.Sdk</id>
+    <version>6.0.16</version>
+    <title>Microsoft.NET.Runtime.MonoTargets.Sdk</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://dot.net/</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Provides the tasks+targets, for consumption by mono-based workloads</description>
+    <releaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <repository type="git" url="https://github.com/dotnet/runtime" commit="1e620a42e71ca8c7efb033fd525f04be5fa701fe" />
+  </metadata>
+</package>

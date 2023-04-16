@@ -1,0 +1,57 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "bgen/1.0.0": {
+        "dependencies": {
+          "Mono.Options": "6.12.0.148",
+          "System.Reflection.MetadataLoadContext": "4.7.2"
+        },
+        "runtime": {
+          "bgen.dll": {}
+        }
+      },
+      "Mono.Options/6.12.0.148": {
+        "runtime": {
+          "lib/netstandard2.0/Mono.Options.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.12.0.0"
+          }
+        }
+      },
+      "System.Reflection.MetadataLoadContext/4.7.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.Reflection.MetadataLoadContext.dll": {
+            "assemblyVersion": "4.0.1.1",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "bgen/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mono.Options/6.12.0.148": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kf6bdXnP4IzqIp4bJ1YKPI3/PAcOV6qm4mznChJ3c92zHQUXTWJSp0+h+Cfcii0O6m/EgW7KA+tbCiB2al0DDA==",
+      "path": "mono.options/6.12.0.148",
+      "hashPath": "mono.options.6.12.0.148.nupkg.sha512"
+    },
+    "System.Reflection.MetadataLoadContext/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6NdeorCnR6rji8yESOIP5BYLuL8SvLX2HZbWfsy0kXeZKHUbxYOiCMfPSoIhjn+jmfz753ZB64WWu/1nE1kcrg==",
+      "path": "system.reflection.metadataloadcontext/4.7.2",
+      "hashPath": "system.reflection.metadataloadcontext.4.7.2.nupkg.sha512"
+    }
+  }
+}

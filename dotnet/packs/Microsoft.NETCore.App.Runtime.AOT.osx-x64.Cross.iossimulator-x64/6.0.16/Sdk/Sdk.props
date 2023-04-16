@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup>
+    <MonoAotCrossCompiler Include="$(MSBuildThisFileDirectory)..\tools\mono-aot-cross" RuntimeIdentifier="iossimulator-x64" />
+  </ItemGroup>
+</Project>
+

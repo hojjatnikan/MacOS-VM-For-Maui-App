@@ -1,0 +1,18 @@
+{
+    "items": {
+        "_MonoRuntimeComponentLinking": [
+            { "identity": "dynamic", "RuntimeIdentifier": "iOSSimulator-x86" },
+        ],
+        "_MonoRuntimeComponentSharedLibExt": [
+            { "identity": ".dylib", "RuntimeIdentifier": "iOSSimulator-x86" },
+        ],
+        "_MonoRuntimeComponentStaticLibExt": [
+            { "identity": ".a", "RuntimeIdentifier": "iOSSimulator-x86" },
+        ],
+        "_MonoRuntimeAvailableComponents": [
+            { "identity": "debugger", "RuntimeIdentifier": "iOSSimulator-x86" },
+{ "identity": "hot_reload", "RuntimeIdentifier": "iOSSimulator-x86" },
+{ "identity": "diagnostics_tracing", "RuntimeIdentifier": "iOSSimulator-x86" },
+        ],
+    }
+}

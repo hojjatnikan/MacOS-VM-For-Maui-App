@@ -1,0 +1,3 @@
+<FileList>
+    <File Path="tools/llc" Permission="755" /> <File Path="tools/mono-aot-cross" Permission="755" /> <File Path="tools/opt" Permission="755" />
+</FileList>

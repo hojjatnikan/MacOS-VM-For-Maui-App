@@ -1,0 +1,42 @@
+<!-- This file contains a generated list of the iOS platform versions that are supported for this SDK -->
+<!-- Generation script: https://github.com/xamarin/xamarin-macios/blob/main/dotnet/generate-target-platforms.csharp -->
+<Project>
+	<ItemGroup>
+		<iOSSdkSupportedTargetPlatformVersion Include="10.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="10.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="10.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="10.3" />
+		<iOSSdkSupportedTargetPlatformVersion Include="11.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="11.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="11.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="11.3" />
+		<iOSSdkSupportedTargetPlatformVersion Include="11.4" />
+		<iOSSdkSupportedTargetPlatformVersion Include="12.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="12.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="12.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="12.3" />
+		<iOSSdkSupportedTargetPlatformVersion Include="12.4" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.3" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.4" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.5" />
+		<iOSSdkSupportedTargetPlatformVersion Include="13.6" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.3" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.4" />
+		<iOSSdkSupportedTargetPlatformVersion Include="14.5" />
+		<iOSSdkSupportedTargetPlatformVersion Include="15.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="15.2" />
+		<iOSSdkSupportedTargetPlatformVersion Include="15.4" />
+		<iOSSdkSupportedTargetPlatformVersion Include="16.0" />
+		<iOSSdkSupportedTargetPlatformVersion Include="16.1" />
+		<iOSSdkSupportedTargetPlatformVersion Include="16.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<SdkSupportedTargetPlatformVersion Condition="'$(TargetPlatformIdentifier)' == 'iOS'" Include="@(iOSSdkSupportedTargetPlatformVersion)" />
+	</ItemGroup>
+</Project>

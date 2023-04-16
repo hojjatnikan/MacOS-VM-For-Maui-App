@@ -1,0 +1,18 @@
+{
+    "items": {
+        "_MonoRuntimeComponentLinking": [
+            { "identity": "static", "RuntimeIdentifier": "iOS-arm64" },
+        ],
+        "_MonoRuntimeComponentSharedLibExt": [
+            { "identity": ".dylib", "RuntimeIdentifier": "iOS-arm64" },
+        ],
+        "_MonoRuntimeComponentStaticLibExt": [
+            { "identity": ".a", "RuntimeIdentifier": "iOS-arm64" },
+        ],
+        "_MonoRuntimeAvailableComponents": [
+            { "identity": "debugger", "RuntimeIdentifier": "iOS-arm64" },
+{ "identity": "hot_reload", "RuntimeIdentifier": "iOS-arm64" },
+{ "identity": "diagnostics_tracing", "RuntimeIdentifier": "iOS-arm64" },
+        ],
+    }
+}

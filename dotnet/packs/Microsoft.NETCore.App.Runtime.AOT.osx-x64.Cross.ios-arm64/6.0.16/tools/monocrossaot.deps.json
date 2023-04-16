@@ -1,0 +1,33 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0/osx-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {},
+    ".NETCoreApp,Version=v6.0/osx-x64": {
+      "Microsoft.NETCore.App.Runtime.AOT.osx-x64.Cross.ios-arm64/6.0.16": {
+        "native": {
+          "llc": {
+            "fileVersion": "0.0.0.0"
+          },
+          "mono-aot-cross": {
+            "fileVersion": "0.0.0.0"
+          },
+          "opt": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.NETCore.App.Runtime.AOT.osx-x64.Cross.ios-arm64/6.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "",
+      "path": "microsoft.netcore.app.runtime.aot.osx-x64.cross.ios-arm64/6.0.16"
+    }
+  }
+}
