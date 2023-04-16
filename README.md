@@ -33,3 +33,8 @@ https://mega.nz/folder/6MZwDIoD#hriCSI54wmBXKo8k0sxqDw
 
 Please just copy/past "dotnet" folder into /usr/local/share of your MacOS
 
+Or
+
+Please just copy/past "dotnet" folder into CurrentUserFolder/Library/Caches/Xamarin/XMA/SDKs of your MacOS
+
+You can download last vertion of dotNet library from repositoy
