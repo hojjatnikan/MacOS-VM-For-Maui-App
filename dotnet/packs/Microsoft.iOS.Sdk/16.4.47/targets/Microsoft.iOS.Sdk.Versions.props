@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<CurrentBranch>release/6.0.4xx-xcode14.3</CurrentBranch>
+		<CurrentHash>08e0d3fe34c09a49cf2a8b6468171eb59729d78e</CurrentHash>
+
+		<_ShortPackageVersion>16.4.47</_ShortPackageVersion>
+		<_PackageVersion>16.4.47+sha.08e0d3fe3</_PackageVersion>
+		<_DefaultTargetPlatformVersion>16.1</_DefaultTargetPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<_XamarinValidRuntimeIdentifier Include="ios-arm" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="ios-arm64" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-x86" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-x64" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-arm64" Platform="iOS" />
+	</ItemGroup>
+</Project>

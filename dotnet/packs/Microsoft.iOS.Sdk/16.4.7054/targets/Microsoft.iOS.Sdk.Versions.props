@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<CurrentBranch>release/7.0.2xx-xcode14.3</CurrentBranch>
+		<CurrentHash>2fae504b6042204ad2fa4d585a36add69ee558d2</CurrentHash>
+
+		<_ShortPackageVersion>16.4.7054</_ShortPackageVersion>
+		<_PackageVersion>16.4.7054+sha.2fae504b6</_PackageVersion>
+		<_DefaultTargetPlatformVersion>16.1</_DefaultTargetPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<_XamarinValidRuntimeIdentifier Include="ios-arm" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-x86" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="ios-arm64" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-x64" Platform="iOS" /> 
+		<_XamarinValidRuntimeIdentifier Include="iossimulator-arm64" Platform="iOS" />
+	</ItemGroup>
+
+	<!-- Declare the XI/XM framework bundled with this version of the SDK. See Microsoft.NETCoreSdk.BundledVersions.props -->
+	<ItemGroup>
+		<KnownFrameworkReference
+			Include="Microsoft.iOS"
+			TargetFramework="net7.0"
+			RuntimeFrameworkName="Microsoft.iOS"
+			DefaultRuntimeFrameworkVersion="16.4.7054"
+			LatestRuntimeFrameworkVersion="16.4.7054"
+			TargetingPackName="Microsoft.iOS.Ref"
+			TargetingPackVersion="16.4.7054"
+			RuntimePackNamePatterns="Microsoft.iOS.Runtime.**RID**"
+			RuntimePackRuntimeIdentifiers="ios-arm;iossimulator-x86;ios-arm64;iossimulator-x64;iossimulator-arm64"
+			Profile="iOS"
+		/>
+	</ItemGroup>
+</Project>

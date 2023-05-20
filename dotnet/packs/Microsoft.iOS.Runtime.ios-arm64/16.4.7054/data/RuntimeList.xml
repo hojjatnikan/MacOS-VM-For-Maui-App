@@ -1,0 +1,9 @@
+<FileList Name="Microsoft iOS - NET 7.0" TargetFrameworkIdentifier=".NETCoreApp" TargetFrameworkVersion="7.0" FrameworkName="Microsoft.iOS">
+  <File Type="Managed" Path="runtimes/ios-arm64/lib/net7.0/Microsoft.iOS.dll" AssemblyName="Microsoft.iOS" PublicKeyToken="84e04ff9cfb79065" AssemblyVersion="16.4.0.0" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/Microsoft.iOS.registrar.a" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/libextension-dotnet.a" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/libxamarin-dotnet-debug.a" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/libxamarin-dotnet-debug.dylib" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/libxamarin-dotnet.a" FileVersion="0.0.0.0" Profile="iOS" />
+  <File Type="Native" Path="runtimes/ios-arm64/native/libxamarin-dotnet.dylib" FileVersion="0.0.0.0" Profile="iOS" />
+</FileList>

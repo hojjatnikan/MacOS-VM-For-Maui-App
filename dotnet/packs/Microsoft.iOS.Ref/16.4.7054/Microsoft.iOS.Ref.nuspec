@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.iOS.Ref</id>
+    <version>16.4.7054+sha.2fae504b6</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/xamarin/xamarin-macios</projectUrl>
+    <description>Microsoft iOS reference assemblies. Please do not reference directly.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <packageTypes>
+      <packageType name="DotnetPlatform" />
+    </packageTypes>
+  </metadata>
+</package>

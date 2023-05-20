@@ -1,0 +1,2144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.iOS</name>
+    </assembly>
+    <members>
+        <member name="M:ObjCRuntime.BlockLiteral.#ctor(System.Void*,System.Object,System.Type,System.String)">
+            <summary>
+            Creates a block literal.
+            </summary>
+            <param name="trampoline">A function pointer that will be called when the block is called. This function must have an [UnmanagedCallersOnly] attribute.</param>
+            <param name="context">A context object that can be retrieved from the trampoline. This is typically a delegate to the managed function to call.</param>
+            <param name="trampolineType">The type where the trampoline is located.</param>
+            <param name="trampolineMethod">The name of the trampoline method.</param>
+            <remarks>
+            The 'trampolineType' and 'trampolineMethod' must uniquely define the trampoline method (it will be looked up using reflection).
+            If there are multiple methods with the same name, use the overload that takes a MethodInfo instead.
+            </remarks>
+        </member>
+        <member name="M:ObjCRuntime.BlockLiteral.#ctor(System.Void*,System.Object,System.Reflection.MethodInfo)">
+            <summary>
+            Creates a block literal.
+            </summary>
+            <param name="trampoline">A function pointer that will be called when the block is called. This function must have an [UnmanagedCallersOnly] attribute.</param>
+            <param name="context">A context object that can be retrieved from the trampoline. This is typically a delegate to the managed function to call.</param>
+            <param name="trampolineMethod">The MethodInfo instance corresponding with the trampoline method.</param>
+        </member>
+        <member name="M:ObjCRuntime.BlockLiteral.#ctor(System.Void*,System.Object,System.String)">
+            <summary>
+            Creates a block literal.
+            </summary>
+            <param name="trampoline">A function pointer that will be called when the block is called. This function must have an [UnmanagedCallersOnly] attribute.</param>
+            <param name="context">A context object that can be retrieved from the trampoline. This is typically a delegate to the managed function to call.</param>
+            <param name="trampolineSignature">The Objective-C signature of the trampoline method.</param>
+        </member>
+        <member name="P:ObjCRuntime.BlockLiteral.Context">
+            <summary>
+            This is the 'context' value that was specified when creating the BlockLiteral.
+            </summary>
+        </member>
+        <member name="M:Compression.CompressionStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,Compression.CompressionAlgorithm,System.Boolean)">
+            <summary>
+            Internal constructor to check stream validity and call the correct initialization function depending on
+            the value of the CompressionMode given.
+            </summary>
+        </member>
+        <member name="M:Compression.CompressionStream.WriteDeflaterOutputAsync(System.Threading.CancellationToken)">
+            <summary>
+            Writes the bytes that have already been deflated
+            </summary>
+        </member>
+        <member name="M:Compression.Deflater.Finished">
+            <summary>
+            Returns true if the end of the stream has been reached.
+            </summary>
+        </member>
+        <member name="M:Compression.Deflater.Flush(System.Byte[],System.Int32@)">
+            <summary>
+            Returns true if there was something to flush. Otherwise False.
+            </summary>
+        </member>
+        <member name="M:Compression.Inflater.#ctor(Compression.CompressionAlgorithm)">
+            <summary>
+            Initialized the Inflater with the given windowBits size
+            </summary>
+        </member>
+        <member name="M:Compression.Inflater.Finished">
+            <summary>
+            Returns true if the end of the stream has been reached.
+            </summary>
+        </member>
+        <member name="M:Compression.Inflater.InflateInit(Compression.CompressionAlgorithm)">
+            <summary>
+            Creates the Compression stream that will handle inflation.
+            </summary>
+        </member>
+        <member name="M:Compression.Inflater.ReadInflateOutput(System.Byte*,System.Int32,System.Int32@)">
+            <summary>
+            Wrapper around the ZLib inflate function, configuring the stream appropriately.
+            </summary>
+        </member>
+        <member name="M:Compression.Inflater.DeallocateInputBufferHandle">
+            <summary>
+            Frees the GCHandle being used to store the input buffer
+            </summary>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskToApm">
+            <summary>
+            Provides support for efficiently using Tasks to implement the APM (Begin/End) pattern.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskToApm.Begin(System.Threading.Tasks.Task,System.AsyncCallback,System.Object)">
+            <summary>
+            Marshals the Task as an IAsyncResult, using the supplied callback and state
+            to implement the APM pattern.
+            </summary>
+            <param name="task">The Task to be marshaled.</param>
+            <param name="callback">The callback to be invoked upon completion.</param>
+            <param name="state">The state to be stored in the IAsyncResult.</param>
+            <returns>An IAsyncResult to represent the task's asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskToApm.End(System.IAsyncResult)">
+            <summary>Processes an IAsyncResult returned by Begin.</summary>
+            <param name="asyncResult">The IAsyncResult to unwrap.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskToApm.End``1(System.IAsyncResult)">
+            <summary>Processes an IAsyncResult returned by Begin.</summary>
+            <param name="asyncResult">The IAsyncResult to unwrap.</param>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskToApm.TaskAsyncResult">
+            <summary>Provides a simple IAsyncResult that wraps a Task.</summary>
+            <remarks>
+            We could use the Task as the IAsyncResult if the Task's AsyncState is the same as the object state,
+            but that's very rare, in particular in a situation where someone cares about allocation, and always
+            using TaskAsyncResult simplifies things and enables additional optimizations.
+            </remarks>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskToApm.TaskAsyncResult._task">
+            <summary>The wrapped Task.</summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskToApm.TaskAsyncResult._callback">
+            <summary>Callback to invoke when the wrapped task completes.</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskToApm.TaskAsyncResult.#ctor(System.Threading.Tasks.Task,System.Object,System.AsyncCallback)">
+            <summary>Initializes the IAsyncResult with the Task to wrap and the associated object state.</summary>
+            <param name="task">The Task to wrap.</param>
+            <param name="state">The new AsyncState value.</param>
+            <param name="callback">Callback to invoke when the wrapped task completes.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskToApm.TaskAsyncResult.InvokeCallback">
+            <summary>Invokes the callback.</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskToApm.TaskAsyncResult.AsyncState">
+            <summary>Gets a user-defined object that qualifies or contains information about an asynchronous operation.</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskToApm.TaskAsyncResult.CompletedSynchronously">
+            <summary>Gets a value that indicates whether the asynchronous operation completed synchronously.</summary>
+            <remarks>This is set lazily based on whether the <see cref="F:System.Threading.Tasks.TaskToApm.TaskAsyncResult._task"/> has completed by the time this object is created.</remarks>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskToApm.TaskAsyncResult.IsCompleted">
+            <summary>Gets a value that indicates whether the asynchronous operation has completed.</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskToApm.TaskAsyncResult.AsyncWaitHandle">
+            <summary>Gets a <see cref="T:System.Threading.WaitHandle"/> that is used to wait for an asynchronous operation to complete.</summary>
+        </member>
+        <member name="M:CoreGraphics.MathHelper.InverseSqrtFast(System.Single)">
+            <summary>
+            Returns an approximation of the inverse square root of left number.
+            </summary>
+            <param name="x">A number.</param>
+            <returns>An approximation of the inverse square root of the specified number, with an upper error bound of 0.001</returns>
+            <remarks>
+            This is an improved implementation of the the method known as Carmack's inverse square root
+            which is found in the Quake III source code. This implementation comes from
+            http://www.codemaestro.com/reviews/review00000105.html. For the history of this method, see
+            http://www.beyond3d.com/content/articles/8/
+            </remarks>
+        </member>
+        <member name="M:CoreGraphics.MathHelper.InverseSqrtFast(System.Double)">
+            <summary>
+            Returns an approximation of the inverse square root of left number.
+            </summary>
+            <param name="x">A number.</param>
+            <returns>An approximation of the inverse square root of the specified number, with an upper error bound of 0.001</returns>
+            <remarks>
+            This is an improved implementation of the the method known as Carmack's inverse square root
+            which is found in the Quake III source code. This implementation comes from
+            http://www.codemaestro.com/reviews/review00000105.html. For the history of this method, see
+            http://www.beyond3d.com/content/articles/8/
+            </remarks>
+        </member>
+        <member name="T:Foundation.XpcInterfaceAttribute">
+            <summary>
+            Specifies that the decorated interface (which must also be
+            decorated with <see cref="T:Foundation.ProtocolAttribute" />) is intended
+            to be used with <see cref="T:Foundation.NSXpcInterface" />. This enables
+            mmp optimizations required for the XPC subsystem to work properly.
+            </summary>
+        </member>
+        <member name="P:Registrar.Registrar.ObjCType.SuperType">
+            <summary>
+            This is the first parent type which is not a model.
+            </summary>
+        </member>
+        <member name="T:SceneKit.SCNMatrix4">
+            <summary>
+            Represents a 4x4 matrix using a column-major memory layout.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNMatrix4.Column0">
+            <summary>
+            Left-most column of the matrix
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNMatrix4.Column1">
+            <summary>
+            2nd column of the matrix
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNMatrix4.Column2">
+            <summary>
+            3rd column of the matrix
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNMatrix4.Column3">
+            <summary>
+            Right-most column of the matrix
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNMatrix4.Identity">
+            <summary>
+            The identity matrix
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.#ctor(SceneKit.SCNVector4,SceneKit.SCNVector4,SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Constructs a new instance.
+            </summary>
+            <param name="row0">Top row of the matrix</param>
+            <param name="row1">Second row of the matrix</param>
+            <param name="row2">Third row of the matrix</param>
+            <param name="row3">Bottom row of the matrix</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Constructs a new instance.
+            </summary>
+            <param name="m00">First item of the first row of the matrix.</param>
+            <param name="m01">Second item of the first row of the matrix.</param>
+            <param name="m02">Third item of the first row of the matrix.</param>
+            <param name="m03">Fourth item of the first row of the matrix.</param>
+            <param name="m10">First item of the second row of the matrix.</param>
+            <param name="m11">Second item of the second row of the matrix.</param>
+            <param name="m12">Third item of the second row of the matrix.</param>
+            <param name="m13">Fourth item of the second row of the matrix.</param>
+            <param name="m20">First item of the third row of the matrix.</param>
+            <param name="m21">Second item of the third row of the matrix.</param>
+            <param name="m22">Third item of the third row of the matrix.</param>
+            <param name="m23">First item of the third row of the matrix.</param>
+            <param name="m30">Fourth item of the fourth row of the matrix.</param>
+            <param name="m31">Second item of the fourth row of the matrix.</param>
+            <param name="m32">Third item of the fourth row of the matrix.</param>
+            <param name="m33">Fourth item of the fourth row of the matrix.</param>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.Determinant">
+            <summary>
+            The determinant of this matrix
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.Row0">
+            <summary>
+            The top row of this matrix
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.Row1">
+            <summary>
+            The second row of this matrix
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.Row2">
+            <summary>
+            The third row of this matrix
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.Row3">
+            <summary>
+            The last row of this matrix
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M11">
+            <summary>
+            Gets or sets the value at column 1, row 1 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M12">
+            <summary>
+            Gets or sets the value at column 1, row 2 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M13">
+            <summary>
+            Gets or sets the value at column 1, row 3 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M14">
+            <summary>
+            Gets or sets the value at column 1, row 4 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M21">
+            <summary>
+            Gets or sets the value at column 2, row 1 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M22">
+            <summary>
+            Gets or sets the value at column 2, row 2 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M23">
+            <summary>
+            Gets or sets the value at column 2, row 3 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M24">
+            <summary>
+            Gets or sets the value at column 2, row 4 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M31">
+            <summary>
+            Gets or sets the value at column 3, row 1 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M32">
+            <summary>
+            Gets or sets the value at column 3, row 2 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M33">
+            <summary>
+            Gets or sets the value at column 3, row 3 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M34">
+            <summary>
+            Gets or sets the value at column 3, row 4 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M41">
+            <summary>
+            Gets or sets the value at column 4, row 1 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M42">
+            <summary>
+            Gets or sets the value at column 4, row 2 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M43">
+            <summary>
+            Gets or sets the value at column 4, row 3 of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNMatrix4.M44">
+            <summary>
+            Gets or sets the value at column 4, row 4 of this instance.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Invert">
+            <summary>
+            Converts this instance into its inverse.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Transpose">
+            <summary>
+            Converts this instance into its transpose.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateFromAxisAngle(SceneKit.SCNVector3,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Build a rotation matrix from the specified axis/angle rotation.
+            </summary>
+            <param name="axis">The axis to rotate about.</param>
+            <param name="angle">Angle in radians to rotate counter-clockwise (looking in the direction of the given axis).</param>
+            <param name="result">A matrix instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateFromAxisAngle(System.Single,System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Build a rotation matrix from the specified axis/angle rotation.
+            </summary>
+            <param name="x">The x part of the normalized axis to rotate about.</param>
+            <param name="y">The y part of the normalized axis to rotate about.</param>
+            <param name="z">The z part of the normalized axis to rotate about.</param>
+            <param name="angle">Angle in radians to rotate counter-clockwise (looking in the direction of the given axis).</param>
+            <param name="result">A matrix instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateFromAxisAngle(System.Double,System.Double,System.Double,System.Double,SceneKit.SCNMatrix4@)">
+            <summary>
+            Build a rotation matrix from the specified axis/angle rotation.
+            </summary>
+            <param name="x">The x part of the normalized axis to rotate about.</param>
+            <param name="y">The y part of the normalized axis to rotate about.</param>
+            <param name="z">The z part of the normalized axis to rotate about.</param>
+            <param name="angle">Angle in radians to rotate counter-clockwise (looking in the direction of the given axis).</param>
+            <param name="result">A matrix instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateFromAxisAngle(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Build a rotation matrix from the specified axis/angle rotation.
+            </summary>
+            <param name="axis">The axis to rotate about.</param>
+            <param name="angle">Angle in radians to rotate counter-clockwise (looking in the direction of the given axis).</param>
+            <returns>A matrix instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationX(System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Builds a rotation matrix for a rotation around the x-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationX(System.Single)">
+            <summary>
+            Builds a rotation matrix for a rotation around the x-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationY(System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Builds a rotation matrix for a rotation around the y-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationY(System.Single)">
+            <summary>
+            Builds a rotation matrix for a rotation around the y-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationZ(System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Builds a rotation matrix for a rotation around the z-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateRotationZ(System.Single)">
+            <summary>
+            Builds a rotation matrix for a rotation around the z-axis.
+            </summary>
+            <param name="angle">The counter-clockwise angle in radians.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateTranslation(System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates a translation matrix.
+            </summary>
+            <param name="x">X translation.</param>
+            <param name="y">Y translation.</param>
+            <param name="z">Z translation.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateTranslation(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates a translation matrix.
+            </summary>
+            <param name="vector">The translation vector.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateTranslation(System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a translation matrix.
+            </summary>
+            <param name="x">X translation.</param>
+            <param name="y">Y translation.</param>
+            <param name="z">Z translation.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateTranslation(SceneKit.SCNVector3)">
+            <summary>
+            Creates a translation matrix.
+            </summary>
+            <param name="vector">The translation vector.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateOrthographic(System.Single,System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates an orthographic projection matrix.
+            </summary>
+            <param name="width">The width of the projection volume.</param>
+            <param name="height">The height of the projection volume.</param>
+            <param name="zNear">The near edge of the projection volume.</param>
+            <param name="zFar">The far edge of the projection volume.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateOrthographic(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates an orthographic projection matrix.
+            </summary>
+            <param name="width">The width of the projection volume.</param>
+            <param name="height">The height of the projection volume.</param>
+            <param name="zNear">The near edge of the projection volume.</param>
+            <param name="zFar">The far edge of the projection volume.</param>
+            <rereturns>The resulting SCNMatrix4 instance.</rereturns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateOrthographicOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates an orthographic projection matrix.
+            </summary>
+            <param name="left">The left edge of the projection volume.</param>
+            <param name="right">The right edge of the projection volume.</param>
+            <param name="bottom">The bottom edge of the projection volume.</param>
+            <param name="top">The top edge of the projection volume.</param>
+            <param name="zNear">The near edge of the projection volume.</param>
+            <param name="zFar">The far edge of the projection volume.</param>
+            <param name="result">The resulting SCNMatrix4 instance.</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreateOrthographicOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates an orthographic projection matrix.
+            </summary>
+            <param name="left">The left edge of the projection volume.</param>
+            <param name="right">The right edge of the projection volume.</param>
+            <param name="bottom">The bottom edge of the projection volume.</param>
+            <param name="top">The top edge of the projection volume.</param>
+            <param name="zNear">The near edge of the projection volume.</param>
+            <param name="zFar">The far edge of the projection volume.</param>
+            <returns>The resulting SCNMatrix4 instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreatePerspectiveFieldOfView(System.Single,System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates a perspective projection matrix.
+            </summary>
+            <param name="fovy">Angle of the field of view in the y direction (in radians)</param>
+            <param name="aspect">Aspect ratio of the view (width / height)</param>
+            <param name="zNear">Distance to the near clip plane</param>
+            <param name="zFar">Distance to the far clip plane</param>
+            <param name="result">A projection matrix that transforms camera space to raster space</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown under the following conditions:
+            <list type="bullet">
+            <item>fovy is zero, less than zero or larger than Math.PI</item>
+            <item>aspect is negative or zero</item>
+            <item>zNear is negative or zero</item>
+            <item>zFar is negative or zero</item>
+            <item>zNear is larger than zFar</item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreatePerspectiveFieldOfView(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a perspective projection matrix.
+            </summary>
+            <param name="fovy">Angle of the field of view in the y direction (in radians)</param>
+            <param name="aspect">Aspect ratio of the view (width / height)</param>
+            <param name="zNear">Distance to the near clip plane</param>
+            <param name="zFar">Distance to the far clip plane</param>
+            <returns>A projection matrix that transforms camera space to raster space</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown under the following conditions:
+            <list type="bullet">
+            <item>fovy is zero, less than zero or larger than Math.PI</item>
+            <item>aspect is negative or zero</item>
+            <item>zNear is negative or zero</item>
+            <item>zFar is negative or zero</item>
+            <item>zNear is larger than zFar</item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreatePerspectiveOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,SceneKit.SCNMatrix4@)">
+            <summary>
+            Creates an perspective projection matrix.
+            </summary>
+            <param name="left">Left edge of the view frustum</param>
+            <param name="right">Right edge of the view frustum</param>
+            <param name="bottom">Bottom edge of the view frustum</param>
+            <param name="top">Top edge of the view frustum</param>
+            <param name="zNear">Distance to the near clip plane</param>
+            <param name="zFar">Distance to the far clip plane</param>
+            <param name="result">A projection matrix that transforms camera space to raster space</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown under the following conditions:
+            <list type="bullet">
+            <item>zNear is negative or zero</item>
+            <item>zFar is negative or zero</item>
+            <item>zNear is larger than zFar</item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.CreatePerspectiveOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates an perspective projection matrix.
+            </summary>
+            <param name="left">Left edge of the view frustum</param>
+            <param name="right">Right edge of the view frustum</param>
+            <param name="bottom">Bottom edge of the view frustum</param>
+            <param name="top">Top edge of the view frustum</param>
+            <param name="zNear">Distance to the near clip plane</param>
+            <param name="zFar">Distance to the far clip plane</param>
+            <returns>A projection matrix that transforms camera space to raster space</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown under the following conditions:
+            <list type="bullet">
+            <item>zNear is negative or zero</item>
+            <item>zFar is negative or zero</item>
+            <item>zNear is larger than zFar</item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Scale(System.Single)">
+            <summary>
+            Build a scaling matrix
+            </summary>
+            <param name="scale">Single scale factor for x,y and z axes</param>
+            <returns>A scaling matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Scale(SceneKit.SCNVector3)">
+            <summary>
+            Build a scaling matrix
+            </summary>
+            <param name="scale">Scale factors for x,y and z axes</param>
+            <returns>A scaling matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Scale(System.Single,System.Single,System.Single)">
+            <summary>
+            Build a scaling matrix
+            </summary>
+            <param name="x">Scale factor for x-axis</param>
+            <param name="y">Scale factor for y-axis</param>
+            <param name="z">Scale factor for z-axis</param>
+            <returns>A scaling matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Rotate(System.Numerics.Quaternion)">
+            <summary>
+            Build a rotation matrix from a quaternion
+            </summary>
+            <param name="q">the quaternion</param>
+            <returns>A rotation matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Rotate(CoreGraphics.NQuaterniond)">
+            <summary>
+            Build a rotation matrix from a quaternion
+            </summary>
+            <param name="q">the quaternion</param>
+            <returns>A rotation matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.LookAt(SceneKit.SCNVector3,SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Build a world space to camera space matrix
+            </summary>
+            <param name="eye">Eye (camera) position in world space</param>
+            <param name="target">Target position in world space</param>
+            <param name="up">Up vector in world space (should not be parallel to the camera direction, that is target - eye)</param>
+            <returns>A SCNMatrix4 that transforms world space to camera space</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.LookAt(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Build a world space to camera space matrix
+            </summary>
+            <param name="eyeX">Eye (camera) position in world space</param>
+            <param name="eyeY">Eye (camera) position in world space</param>
+            <param name="eyeZ">Eye (camera) position in world space</param>
+            <param name="targetX">Target position in world space</param>
+            <param name="targetY">Target position in world space</param>
+            <param name="targetZ">Target position in world space</param>
+            <param name="upX">Up vector in world space (should not be parallel to the camera direction, that is target - eye)</param>
+            <param name="upY">Up vector in world space (should not be parallel to the camera direction, that is target - eye)</param>
+            <param name="upZ">Up vector in world space (should not be parallel to the camera direction, that is target - eye)</param>
+            <returns>A SCNMatrix4 that transforms world space to camera space</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Mult(SceneKit.SCNMatrix4,SceneKit.SCNMatrix4)">
+            <summary>
+            Combines two transformation matrices.
+            </summary>
+            <remarks>
+            Combining two transformation matrices means using matrix multiplication to multiply them in the reverse order (right * left).
+            </remarks>
+            <param name="left">The first transformation of the combination.</param>
+            <param name="right">The second transformation of the combination.</param>
+            <returns>A new instance that is the result of the combination</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Mult(SceneKit.SCNMatrix4@,SceneKit.SCNMatrix4@,SceneKit.SCNMatrix4@)">
+            <summary>
+            Combines two transformation matrices.
+            </summary>
+            <remarks>
+            Combining two transformation matrices means using matrix multiplication to multiply them in the reverse order (right * left).
+            </remarks>
+            <param name="left">The first transformation of the combination.</param>
+            <param name="right">The second transformation of the combination.</param>
+            <param name="result">A new instance that is the result of the combination</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Invert(SceneKit.SCNMatrix4)">
+            <summary>
+            Calculate the inverse of the given matrix
+            </summary>
+            <param name="matrix">The matrix to invert</param>
+            <returns>The inverse of the given matrix if it has one, or the input if it is singular</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the SCNMatrix4 is singular.</exception>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Transpose(SceneKit.SCNMatrix4)">
+            <summary>
+            Calculate the transpose of the given matrix
+            </summary>
+            <param name="mat">The matrix to transpose</param>
+            <returns>The transpose of the given matrix</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Transpose(SceneKit.SCNMatrix4@,SceneKit.SCNMatrix4@)">
+            <summary>
+            Calculate the transpose of the given matrix
+            </summary>
+            <param name="mat">The matrix to transpose</param>
+            <param name="result">The result of the calculation</param>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.op_Multiply(SceneKit.SCNMatrix4,SceneKit.SCNMatrix4)">
+            <summary>
+            Matrix multiplication
+            </summary>
+            <param name="left">left-hand operand</param>
+            <param name="right">right-hand operand</param>
+            <returns>A new SCNMatrix44 which holds the result of the multiplication</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.op_Equality(SceneKit.SCNMatrix4,SceneKit.SCNMatrix4)">
+            <summary>
+            Compares two instances for equality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left equals right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.op_Inequality(SceneKit.SCNMatrix4,SceneKit.SCNMatrix4)">
+            <summary>
+            Compares two instances for inequality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left does not equal right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.ToString">
+            <summary>
+            Returns a System.String that represents the current SCNMatrix4.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.GetHashCode">
+            <summary>
+            Returns the hashcode for this instance.
+            </summary>
+            <returns>A System.Int32 containing the unique hashcode for this instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="obj">The object to compare tresult.</param>
+            <returns>True if the instances are equal; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNMatrix4.Equals(SceneKit.SCNMatrix4)">
+            <summary>Indicates whether the current matrix is equal to another matrix.</summary>
+            <param name="other">An matrix to compare with this matrix.</param>
+            <returns>true if the current matrix is equal to the matrix parameter; otherwise, false.</returns>
+        </member>
+        <member name="T:SceneKit.SCNQuaternion">
+            <summary>
+            Represents a Quaternion.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.#ctor(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Construct a new SCNQuaternion from vector and w components
+            </summary>
+            <param name="v">The vector part</param>
+            <param name="w">The w part</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Construct a new SCNQuaternion
+            </summary>
+            <param name="x">The x component</param>
+            <param name="y">The y component</param>
+            <param name="z">The z component</param>
+            <param name="w">The w component</param>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.Xyz">
+            <summary>
+            Gets or sets an OpenTK.Vector3 with the X, Y and Z components of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.X">
+            <summary>
+            Gets or sets the X component of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.Y">
+            <summary>
+            Gets or sets the Y component of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.Z">
+            <summary>
+            Gets or sets the Z component of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.W">
+            <summary>
+            Gets or sets the W component of this instance.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.ToAxisAngle(SceneKit.SCNVector3@,System.Single@)">
+            <summary>
+            Convert the current quaternion to axis angle representation
+            </summary>
+            <param name="axis">The resultant axis</param>
+            <param name="angle">The resultant angle</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.ToAxisAngle">
+            <summary>
+            Convert this instance to an axis-angle representation.
+            </summary>
+            <returns>A Vector4 that is the axis-angle representation of this quaternion.</returns>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.Length">
+            <summary>
+            Gets the length (magnitude) of the quaternion.
+            </summary>
+            <seealso cref="P:SceneKit.SCNQuaternion.LengthSquared"/>
+        </member>
+        <member name="P:SceneKit.SCNQuaternion.LengthSquared">
+            <summary>
+            Gets the square of the quaternion length (magnitude).
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Normalize">
+            <summary>
+            Scales the Quaternion to unit length.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Conjugate">
+            <summary>
+            Convert this quaternion to its conjugate
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNQuaternion.Identity">
+            <summary>
+            Defines the identity quaternion.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Add(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Add two quaternions
+            </summary>
+            <param name="left">The first operand</param>
+            <param name="right">The second operand</param>
+            <returns>The result of the addition</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Add(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Add two quaternions
+            </summary>
+            <param name="left">The first operand</param>
+            <param name="right">The second operand</param>
+            <param name="result">The result of the addition</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Sub(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Subtracts two instances.
+            </summary>
+            <param name="left">The left instance.</param>
+            <param name="right">The right instance.</param>
+            <returns>The result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Sub(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Subtracts two instances.
+            </summary>
+            <param name="left">The left instance.</param>
+            <param name="right">The right instance.</param>
+            <param name="result">The result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Multiply(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Multiplies two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>A new instance containing the result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Multiply(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Multiplies two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <param name="result">A new instance containing the result of the calculation.</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Multiply(SceneKit.SCNQuaternion@,System.Single,SceneKit.SCNQuaternion@)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="quaternion">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <param name="result">A new instance containing the result of the calculation.</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Multiply(SceneKit.SCNQuaternion,System.Single)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="quaternion">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>A new instance containing the result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Conjugate(SceneKit.SCNQuaternion)">
+            <summary>
+            Get the conjugate of the given quaternion
+            </summary>
+            <param name="q">The quaternion</param>
+            <returns>The conjugate of the given quaternion</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Conjugate(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Get the conjugate of the given quaternion
+            </summary>
+            <param name="q">The quaternion</param>
+            <param name="result">The conjugate of the given quaternion</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Invert(SceneKit.SCNQuaternion)">
+            <summary>
+            Get the inverse of the given quaternion
+            </summary>
+            <param name="q">The quaternion to invert</param>
+            <returns>The inverse of the given quaternion</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Invert(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Get the inverse of the given quaternion
+            </summary>
+            <param name="q">The quaternion to invert</param>
+            <param name="result">The inverse of the given quaternion</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Normalize(SceneKit.SCNQuaternion)">
+            <summary>
+            Scale the given quaternion to unit length
+            </summary>
+            <param name="q">The quaternion to normalize</param>
+            <returns>The normalized quaternion</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Normalize(SceneKit.SCNQuaternion@,SceneKit.SCNQuaternion@)">
+            <summary>
+            Scale the given quaternion to unit length
+            </summary>
+            <param name="q">The quaternion to normalize</param>
+            <param name="result">The normalized quaternion</param>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.FromAxisAngle(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Build a quaternion from the given axis and angle
+            </summary>
+            <param name="axis">The axis to rotate about</param>
+            <param name="angle">The rotation angle in radians</param>
+            <returns></returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Slerp(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion,System.Single)">
+            <summary>
+            Do Spherical linear interpolation between two quaternions 
+            </summary>
+            <param name="q1">The first quaternion</param>
+            <param name="q2">The second quaternion</param>
+            <param name="blend">The blend factor</param>
+            <returns>A smooth blend between the given quaternions</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Addition(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Adds two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Subtraction(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Subtracts two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Multiply(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Multiplies two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Multiply(SceneKit.SCNQuaternion,System.Single)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="quaternion">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>A new instance containing the result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Multiply(System.Single,SceneKit.SCNQuaternion)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="quaternion">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>A new instance containing the result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Equality(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Compares two instances for equality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left equals right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.op_Inequality(SceneKit.SCNQuaternion,SceneKit.SCNQuaternion)">
+            <summary>
+            Compares two instances for inequality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left does not equal right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.ToString">
+            <summary>
+            Returns a System.String that represents the current Quaternion.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Equals(System.Object)">
+            <summary>
+            Compares this object instance to another object for equality. 
+            </summary>
+            <param name="other">The other object to be used in the comparison.</param>
+            <returns>True if both objects are Quaternions of equal value. Otherwise it returns false.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.GetHashCode">
+            <summary>
+            Provides the hash code for this object. 
+            </summary>
+            <returns>A hash code formed from the bitwise XOR of this objects members.</returns>
+        </member>
+        <member name="M:SceneKit.SCNQuaternion.Equals(SceneKit.SCNQuaternion)">
+            <summary>
+            Compares this SCNQuaternion instance to another SCNQuaternion for equality. 
+            </summary>
+            <param name="other">The other SCNQuaternion to be used in the comparison.</param>
+            <returns>True if both instances are equal; false otherwise.</returns>
+        </member>
+        <member name="T:SceneKit.SCNVector3">
+            <summary>
+            Represents a 3D vector using three single-precision floating-point numbers.
+            </summary>
+            <remarks>
+            The Vector3 structure is suitable for interoperation with unmanaged code requiring three consecutive floats.
+            </remarks>
+        </member>
+        <member name="F:SceneKit.SCNVector3.X">
+            <summary>
+            The X component of the Vector3.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.Y">
+            <summary>
+            The Y component of the Vector3.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.Z">
+            <summary>
+            The Z component of the Vector3.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector3.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Constructs a new Vector3.
+            </summary>
+            <param name="x">The x component of the Vector3.</param>
+            <param name="y">The y component of the Vector3.</param>
+            <param name="z">The z component of the Vector3.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.#ctor(SceneKit.SCNVector3)">
+            <summary>
+            Constructs a new Vector3 from the given Vector3.
+            </summary>
+            <param name="v">The Vector3 to copy components from.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.#ctor(SceneKit.SCNVector4)">
+            <summary>
+            Constructs a new Vector3 from the given Vector4.
+            </summary>
+            <param name="v">The Vector4 to copy components from.</param>
+        </member>
+        <member name="P:SceneKit.SCNVector3.Length">
+            <summary>
+            Gets the length (magnitude) of the vector.
+            </summary>
+            <see cref="P:SceneKit.SCNVector3.LengthFast"/>
+            <seealso cref="P:SceneKit.SCNVector3.LengthSquared"/>
+        </member>
+        <member name="P:SceneKit.SCNVector3.LengthFast">
+            <summary>
+            Gets an approximation of the vector length (magnitude).
+            </summary>
+            <remarks>
+            This property uses an approximation of the square root function to calculate vector magnitude, with
+            an upper error bound of 0.001.
+            </remarks>
+            <see cref="P:SceneKit.SCNVector3.Length"/>
+            <seealso cref="P:SceneKit.SCNVector3.LengthSquared"/>
+        </member>
+        <member name="P:SceneKit.SCNVector3.LengthSquared">
+            <summary>
+            Gets the square of the vector length (magnitude).
+            </summary>
+            <remarks>
+            This property avoids the costly square root operation required by the Length property. This makes it more suitable
+            for comparisons.
+            </remarks>
+            <see cref="P:SceneKit.SCNVector3.Length"/>
+            <seealso cref="P:SceneKit.SCNVector3.LengthFast"/>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Normalize">
+            <summary>
+            Scales the SCNVector3 to unit length.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector3.NormalizeFast">
+            <summary>
+            Scales the SCNVector3 to approximately unit length.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.UnitX">
+            <summary>
+            Defines a unit-length SCNVector3 that points towards the X-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.UnitY">
+            <summary>
+            Defines a unit-length SCNVector3 that points towards the Y-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.UnitZ">
+            <summary>
+            /// Defines a unit-length SCNVector3 that points towards the Z-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.Zero">
+            <summary>
+            Defines a zero-length SCNVector3.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.One">
+            <summary>
+            Defines an instance with all components set to 1.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector3.SizeInBytes">
+            <summary>
+            Defines the size of the SCNVector3 struct in bytes.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Add(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Adds two vectors.
+            </summary>
+            <param name="a">Left operand.</param>
+            <param name="b">Right operand.</param>
+            <returns>Result of operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Add(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Adds two vectors.
+            </summary>
+            <param name="a">Left operand.</param>
+            <param name="b">Right operand.</param>
+            <param name="result">Result of operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Subtract(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>Result of subtraction</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Subtract(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">Result of subtraction</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Multiply(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Multiplies a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Multiply(SceneKit.SCNVector3@,System.Single,SceneKit.SCNVector3@)">
+            <summary>
+            Multiplies a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Multiply(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Multiplies a vector by the components a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Multiply(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Multiplies a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Divide(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Divides a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Divide(SceneKit.SCNVector3@,System.Single,SceneKit.SCNVector3@)">
+            <summary>
+            Divides a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Divide(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Divides a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Divide(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Divide a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.ComponentMin(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Calculate the component-wise minimum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>The component-wise minimum</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.ComponentMin(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Calculate the component-wise minimum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">The component-wise minimum</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.ComponentMax(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Calculate the component-wise maximum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>The component-wise maximum</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.ComponentMax(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Calculate the component-wise maximum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">The component-wise maximum</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Min(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Returns the SCNVector3 with the minimum magnitude
+            </summary>
+            <param name="left">Left operand</param>
+            <param name="right">Right operand</param>
+            <returns>The minimum SCNVector3</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Max(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Returns the SCNVector3 with the minimum magnitude
+            </summary>
+            <param name="left">Left operand</param>
+            <param name="right">Right operand</param>
+            <returns>The minimum SCNVector3</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Clamp(SceneKit.SCNVector3,SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Clamp a vector to the given minimum and maximum vectors
+            </summary>
+            <param name="vec">Input vector</param>
+            <param name="min">Minimum vector</param>
+            <param name="max">Maximum vector</param>
+            <returns>The clamped vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Clamp(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Clamp a vector to the given minimum and maximum vectors
+            </summary>
+            <param name="vec">Input vector</param>
+            <param name="min">Minimum vector</param>
+            <param name="max">Maximum vector</param>
+            <param name="result">The clamped vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Normalize(SceneKit.SCNVector3)">
+            <summary>
+            Scale a vector to unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <returns>The normalized vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Normalize(SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Scale a vector to unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <param name="result">The normalized vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.NormalizeFast(SceneKit.SCNVector3)">
+            <summary>
+            Scale a vector to approximately unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <returns>The normalized vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.NormalizeFast(SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Scale a vector to approximately unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <param name="result">The normalized vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Dot(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Calculate the dot (scalar) product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <returns>The dot product of the two inputs</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Dot(SceneKit.SCNVector3@,SceneKit.SCNVector3@,System.Single@)">
+            <summary>
+            Calculate the dot (scalar) product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <param name="result">The dot product of the two inputs</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Cross(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Caclulate the cross (vector) product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <returns>The cross product of the two inputs</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Cross(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@)">
+            <summary>
+            Caclulate the cross (vector) product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <returns>The cross product of the two inputs</returns>
+            <param name="result">The cross product of the two inputs</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Lerp(SceneKit.SCNVector3,SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Returns a new Vector that is the linear blend of the 2 given Vectors
+            </summary>
+            <param name="a">First input vector</param>
+            <param name="b">Second input vector</param>
+            <param name="blend">The blend factor. a when blend=0, b when blend=1.</param>
+            <returns>a when blend=0, b when blend=1, and a linear combination otherwise</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Lerp(SceneKit.SCNVector3@,SceneKit.SCNVector3@,System.Single,SceneKit.SCNVector3@)">
+            <summary>
+            Returns a new Vector that is the linear blend of the 2 given Vectors
+            </summary>
+            <param name="a">First input vector</param>
+            <param name="b">Second input vector</param>
+            <param name="blend">The blend factor. a when blend=0, b when blend=1.</param>
+            <param name="result">a when blend=0, b when blend=1, and a linear combination otherwise</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.BaryCentric(SceneKit.SCNVector3,SceneKit.SCNVector3,SceneKit.SCNVector3,System.Single,System.Single)">
+            <summary>
+            Interpolate 3 Vectors using Barycentric coordinates
+            </summary>
+            <param name="a">First input Vector</param>
+            <param name="b">Second input Vector</param>
+            <param name="c">Third input Vector</param>
+            <param name="u">First Barycentric Coordinate</param>
+            <param name="v">Second Barycentric Coordinate</param>
+            <returns>a when u=v=0, b when u=1,v=0, c when u=0,v=1, and a linear combination of a,b,c otherwise</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.BaryCentric(SceneKit.SCNVector3@,SceneKit.SCNVector3@,SceneKit.SCNVector3@,System.Single,System.Single,SceneKit.SCNVector3@)">
+            <summary>Interpolate 3 Vectors using Barycentric coordinates</summary>
+            <param name="a">First input Vector.</param>
+            <param name="b">Second input Vector.</param>
+            <param name="c">Third input Vector.</param>
+            <param name="u">First Barycentric Coordinate.</param>
+            <param name="v">Second Barycentric Coordinate.</param>
+            <param name="result">Output Vector. a when u=v=0, b when u=1,v=0, c when u=0,v=1, and a linear combination of a,b,c otherwise</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformVector(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a direction vector by the given Matrix
+            Assumes the matrix has a right-most column of (0,0,0,1), that is the translation part is ignored.
+            </summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformVector(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector3@)">
+            <summary>Transform a direction vector by the given Matrix
+            Assumes the matrix has a right-most column of (0,0,0,1), that is the translation part is ignored.
+            </summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformNormal(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a Normal by the given Matrix</summary>
+            <remarks>
+            This calculates the inverse of the given matrix, use TransformNormalInverse if you
+            already have the inverse to avoid this extra calculation
+            </remarks>
+            <param name="norm">The column-based normal to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed normal</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformNormal(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector3@)">
+            <summary>Transform a Normal by the given Matrix</summary>
+            <remarks>
+            This calculates the inverse of the given matrix, use TransformNormalInverse if you
+            already have the inverse to avoid this extra calculation
+            </remarks>
+            <param name="norm">The column-based normal to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed normal</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformNormalInverse(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a Normal by the (transpose of the) given Matrix</summary>
+            <remarks>
+            This version doesn't calculate the inverse matrix.
+            Use this version if you already have the inverse of the desired transform to hand
+            </remarks>
+            <param name="norm">The column-based normal to transform</param>
+            <param name="invMat">The inverse of the desired transformation</param>
+            <returns>The transformed normal</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformNormalInverse(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector3@)">
+            <summary>Transform a Normal by the (transpose of the) given Matrix</summary>
+            <remarks>
+            This version doesn't calculate the inverse matrix.
+            Use this version if you already have the inverse of the desired transform to hand
+            </remarks>
+            <param name="norm">The column-based normal to transform</param>
+            <param name="invMat">The inverse of the desired transformation</param>
+            <param name="result">The transformed normal</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformPosition(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a Position by the given Matrix</summary>
+            <param name="pos">The column-based position to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed position</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformPosition(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector3@)">
+            <summary>Transform a Position by the given Matrix</summary>
+            <param name="pos">The column-based position to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed position</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Transform(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a Vector by the given Matrix</summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Transform(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector4@)">
+            <summary>Transform a Vector by the given Matrix</summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformPerspective(SceneKit.SCNVector3,SceneKit.SCNMatrix4)">
+            <summary>Transform a SCNVector3 by the given Matrix, and project the resulting Vector4 back to a SCNVector3</summary>
+            <param name="vec">The vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.TransformPerspective(SceneKit.SCNVector3@,SceneKit.SCNMatrix4@,SceneKit.SCNVector3@)">
+            <summary>Transform a SCNVector3 by the given Matrix, and project the resulting SCNVector4 back to a SCNVector3</summary>
+            <param name="vec">The vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector3.CalculateAngle(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Calculates the angle (in radians) between two vectors.
+            </summary>
+            <param name="first">The first vector.</param>
+            <param name="second">The second vector.</param>
+            <returns>Angle (in radians) between the vectors.</returns>
+            <remarks>Note that the returned angle is never bigger than the constant Pi.</remarks>
+        </member>
+        <member name="M:SceneKit.SCNVector3.CalculateAngle(SceneKit.SCNVector3@,SceneKit.SCNVector3@,System.Single@)">
+            <summary>Calculates the angle (in radians) between two vectors.</summary>
+            <param name="first">The first vector.</param>
+            <param name="second">The second vector.</param>
+            <param name="result">Angle (in radians) between the vectors.</param>
+            <remarks>Note that the returned angle is never bigger than the constant Pi.</remarks>
+        </member>
+        <member name="P:SceneKit.SCNVector3.Xy">
+            <summary>
+            Gets or sets an OpenTK.Vector2 with the X and Y components of this instance.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Addition(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Adds two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Subtraction(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Subtracts two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_UnaryNegation(SceneKit.SCNVector3)">
+            <summary>
+            Negates an instance.
+            </summary>
+            <param name="vec">The instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Multiply(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="vec">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Multiply(System.Single,SceneKit.SCNVector3)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="scale">The scalar.</param>
+            <param name="vec">The instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Division(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Divides an instance by a scalar.
+            </summary>
+            <param name="vec">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Equality(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Compares two instances for equality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left equals right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.op_Inequality(SceneKit.SCNVector3,SceneKit.SCNVector3)">
+            <summary>
+            Compares two instances for inequality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left does not equa lright; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.ToString">
+            <summary>
+            Returns a System.String that represents the current SCNVector3.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.GetHashCode">
+            <summary>
+            Returns the hashcode for this instance.
+            </summary>
+            <returns>A System.Int32 containing the unique hashcode for this instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>True if the instances are equal; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector3.Equals(SceneKit.SCNVector3)">
+            <summary>Indicates whether the current vector is equal to another vector.</summary>
+            <param name="other">A vector to compare with this vector.</param>
+            <returns>true if the current vector is equal to the vector parameter; otherwise, false.</returns>
+        </member>
+        <member name="T:SceneKit.SCNVector4">
+            <summary>Represents a 4D vector using four single-precision floating-point numbers.</summary>
+            <remarks>
+            The Vector4 structure is suitable for interoperation with unmanaged code requiring four consecutive floats.
+            </remarks>
+        </member>
+        <member name="F:SceneKit.SCNVector4.X">
+            <summary>
+            The X component of the SCNVector4.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.Y">
+            <summary>
+            The Y component of the SCNVector4.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.Z">
+            <summary>
+            The Z component of the SCNVector4.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.W">
+            <summary>
+            The W component of the SCNVector4.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.UnitX">
+            <summary>
+            Defines a unit-length SCNVector4 that points towards the X-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.UnitY">
+            <summary>
+            Defines a unit-length SCNVector4 that points towards the Y-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.UnitZ">
+            <summary>
+            Defines a unit-length SCNVector4 that points towards the Z-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.UnitW">
+            <summary>
+            Defines a unit-length SCNVector4 that points towards the W-axis.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.Zero">
+            <summary>
+            Defines a zero-length SCNVector4.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.One">
+            <summary>
+            Defines an instance with all components set to 1.
+            </summary>
+        </member>
+        <member name="F:SceneKit.SCNVector4.SizeInBytes">
+            <summary>
+            Defines the size of the SCNVector4 struct in bytes.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector4.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Constructs a new SCNVector4.
+            </summary>
+            <param name="x">The x component of the SCNVector4.</param>
+            <param name="y">The y component of the SCNVector4.</param>
+            <param name="z">The z component of the SCNVector4.</param>
+            <param name="w">The z component of the SCNVector4.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.#ctor(System.Numerics.Vector2)">
+            <summary>
+            Constructs a new SCNVector4 from the given Vector2.
+            </summary>
+            <param name="v">The Vector2 to copy components from.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.#ctor(SceneKit.SCNVector3)">
+            <summary>
+            Constructs a new SCNVector4 from the given Vector3.
+            </summary>
+            <param name="v">The Vector3 to copy components from.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.#ctor(SceneKit.SCNVector3,System.Single)">
+            <summary>
+            Constructs a new SCNVector4 from the specified Vector3 and W component.
+            </summary>
+            <param name="v">The Vector3 to copy components from.</param>
+            <param name="w">The W component of the new SCNVector4.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.#ctor(SceneKit.SCNVector4)">
+            <summary>
+            Constructs a new SCNVector4 from the given SCNVector4.
+            </summary>
+            <param name="v">The SCNVector4 to copy components from.</param>
+        </member>
+        <member name="P:SceneKit.SCNVector4.Length">
+            <summary>
+            Gets the length (magnitude) of the vector.
+            </summary>
+            <see cref="P:SceneKit.SCNVector4.LengthFast"/>
+            <seealso cref="P:SceneKit.SCNVector4.LengthSquared"/>
+        </member>
+        <member name="P:SceneKit.SCNVector4.LengthFast">
+            <summary>
+            Gets an approximation of the vector length (magnitude).
+            </summary>
+            <remarks>
+            This property uses an approximation of the square root function to calculate vector magnitude, with
+            an upper error bound of 0.001.
+            </remarks>
+            <see cref="P:SceneKit.SCNVector4.Length"/>
+            <seealso cref="P:SceneKit.SCNVector4.LengthSquared"/>
+        </member>
+        <member name="P:SceneKit.SCNVector4.LengthSquared">
+            <summary>
+            Gets the square of the vector length (magnitude).
+            </summary>
+            <remarks>
+            This property avoids the costly square root operation required by the Length property. This makes it more suitable
+            for comparisons.
+            </remarks>
+            <see cref="P:SceneKit.SCNVector4.Length"/>
+            <seealso cref="P:SceneKit.SCNVector4.LengthFast"/>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Normalize">
+            <summary>
+            Scales the SCNVector4 to unit length.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector4.NormalizeFast">
+            <summary>
+            Scales the SCNVector4 to approximately unit length.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Sub(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>Result of subtraction</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Sub(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">Result of subtraction</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Mult(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Multiply a vector and a scalar
+            </summary>
+            <param name="a">Vector operand</param>
+            <param name="f">Scalar operand</param>
+            <returns>Result of the multiplication</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Mult(SceneKit.SCNVector4@,System.Single,SceneKit.SCNVector4@)">
+            <summary>
+            Multiply a vector and a scalar
+            </summary>
+            <param name="a">Vector operand</param>
+            <param name="f">Scalar operand</param>
+            <param name="result">Result of the multiplication</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Div(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Divide a vector by a scalar
+            </summary>
+            <param name="a">Vector operand</param>
+            <param name="f">Scalar operand</param>
+            <returns>Result of the division</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Div(SceneKit.SCNVector4@,System.Single,SceneKit.SCNVector4@)">
+            <summary>
+            Divide a vector by a scalar
+            </summary>
+            <param name="a">Vector operand</param>
+            <param name="f">Scalar operand</param>
+            <param name="result">Result of the division</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Add(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Adds two vectors.
+            </summary>
+            <param name="a">Left operand.</param>
+            <param name="b">Right operand.</param>
+            <returns>Result of operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Add(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Adds two vectors.
+            </summary>
+            <param name="a">Left operand.</param>
+            <param name="b">Right operand.</param>
+            <param name="result">Result of operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Subtract(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>Result of subtraction</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Subtract(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Subtract one Vector from another
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">Result of subtraction</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Multiply(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Multiplies a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Multiply(SceneKit.SCNVector4@,System.Single,SceneKit.SCNVector4@)">
+            <summary>
+            Multiplies a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Multiply(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Multiplies a vector by the components a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Multiply(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Multiplies a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Divide(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Divides a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Divide(SceneKit.SCNVector4@,System.Single,SceneKit.SCNVector4@)">
+            <summary>
+            Divides a vector by a scalar.
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Divide(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Divides a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <returns>Result of the operation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Divide(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Divide a vector by the components of a vector (scale).
+            </summary>
+            <param name="vector">Left operand.</param>
+            <param name="scale">Right operand.</param>
+            <param name="result">Result of the operation.</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Min(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Calculate the component-wise minimum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>The component-wise minimum</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Min(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Calculate the component-wise minimum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">The component-wise minimum</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Max(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Calculate the component-wise maximum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <returns>The component-wise maximum</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Max(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Calculate the component-wise maximum of two vectors
+            </summary>
+            <param name="a">First operand</param>
+            <param name="b">Second operand</param>
+            <param name="result">The component-wise maximum</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Clamp(SceneKit.SCNVector4,SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Clamp a vector to the given minimum and maximum vectors
+            </summary>
+            <param name="vec">Input vector</param>
+            <param name="min">Minimum vector</param>
+            <param name="max">Maximum vector</param>
+            <returns>The clamped vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Clamp(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Clamp a vector to the given minimum and maximum vectors
+            </summary>
+            <param name="vec">Input vector</param>
+            <param name="min">Minimum vector</param>
+            <param name="max">Maximum vector</param>
+            <param name="result">The clamped vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Normalize(SceneKit.SCNVector4)">
+            <summary>
+            Scale a vector to unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <returns>The normalized vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Normalize(SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Scale a vector to unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <param name="result">The normalized vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.NormalizeFast(SceneKit.SCNVector4)">
+            <summary>
+            Scale a vector to approximately unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <returns>The normalized vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.NormalizeFast(SceneKit.SCNVector4@,SceneKit.SCNVector4@)">
+            <summary>
+            Scale a vector to approximately unit length
+            </summary>
+            <param name="vec">The input vector</param>
+            <param name="result">The normalized vector</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Dot(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Calculate the dot product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <returns>The dot product of the two inputs</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Dot(SceneKit.SCNVector4@,SceneKit.SCNVector4@,System.Single@)">
+            <summary>
+            Calculate the dot product of two vectors
+            </summary>
+            <param name="left">First operand</param>
+            <param name="right">Second operand</param>
+            <param name="result">The dot product of the two inputs</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Lerp(SceneKit.SCNVector4,SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Returns a new Vector that is the linear blend of the 2 given Vectors
+            </summary>
+            <param name="a">First input vector</param>
+            <param name="b">Second input vector</param>
+            <param name="blend">The blend factor. a when blend=0, b when blend=1.</param>
+            <returns>a when blend=0, b when blend=1, and a linear combination otherwise</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Lerp(SceneKit.SCNVector4@,SceneKit.SCNVector4@,System.Single,SceneKit.SCNVector4@)">
+            <summary>
+            Returns a new Vector that is the linear blend of the 2 given Vectors
+            </summary>
+            <param name="a">First input vector</param>
+            <param name="b">Second input vector</param>
+            <param name="blend">The blend factor. a when blend=0, b when blend=1.</param>
+            <param name="result">a when blend=0, b when blend=1, and a linear combination otherwise</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.BaryCentric(SceneKit.SCNVector4,SceneKit.SCNVector4,SceneKit.SCNVector4,System.Single,System.Single)">
+            <summary>
+            Interpolate 3 Vectors using Barycentric coordinates
+            </summary>
+            <param name="a">First input Vector</param>
+            <param name="b">Second input Vector</param>
+            <param name="c">Third input Vector</param>
+            <param name="u">First Barycentric Coordinate</param>
+            <param name="v">Second Barycentric Coordinate</param>
+            <returns>a when u=v=0, b when u=1,v=0, c when u=0,v=1, and a linear combination of a,b,c otherwise</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.BaryCentric(SceneKit.SCNVector4@,SceneKit.SCNVector4@,SceneKit.SCNVector4@,System.Single,System.Single,SceneKit.SCNVector4@)">
+            <summary>Interpolate 3 Vectors using Barycentric coordinates</summary>
+            <param name="a">First input Vector.</param>
+            <param name="b">Second input Vector.</param>
+            <param name="c">Third input Vector.</param>
+            <param name="u">First Barycentric Coordinate.</param>
+            <param name="v">Second Barycentric Coordinate.</param>
+            <param name="result">Output Vector. a when u=v=0, b when u=1,v=0, c when u=0,v=1, and a linear combination of a,b,c otherwise</param>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Transform(SceneKit.SCNVector4,SceneKit.SCNMatrix4)">
+            <summary>Transform a Vector by the given Matrix</summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <returns>The transformed vector</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Transform(SceneKit.SCNVector4@,SceneKit.SCNMatrix4@,SceneKit.SCNVector4@)">
+            <summary>Transform a Vector by the given Matrix.</summary>
+            <param name="vec">The column vector to transform</param>
+            <param name="mat">The desired transformation</param>
+            <param name="result">The transformed vector</param>
+        </member>
+        <member name="P:SceneKit.SCNVector4.Xy">
+            <summary>
+            Gets or sets an OpenTK.Vector2 with the X and Y components of this instance.
+            </summary>
+        </member>
+        <member name="P:SceneKit.SCNVector4.Xyz">
+            <summary>
+            Gets or sets an OpenTK.Vector3 with the X, Y and Z components of this instance.
+            </summary>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Addition(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Adds two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Subtraction(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Subtracts two instances.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_UnaryNegation(SceneKit.SCNVector4)">
+            <summary>
+            Negates an instance.
+            </summary>
+            <param name="vec">The instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Multiply(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="vec">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Multiply(System.Single,SceneKit.SCNVector4)">
+            <summary>
+            Multiplies an instance by a scalar.
+            </summary>
+            <param name="scale">The scalar.</param>
+            <param name="vec">The instance.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Division(SceneKit.SCNVector4,System.Single)">
+            <summary>
+            Divides an instance by a scalar.
+            </summary>
+            <param name="vec">The instance.</param>
+            <param name="scale">The scalar.</param>
+            <returns>The result of the calculation.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Equality(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Compares two instances for equality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left equals right; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Inequality(SceneKit.SCNVector4,SceneKit.SCNVector4)">
+            <summary>
+            Compares two instances for inequality.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True, if left does not equa lright; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Explicit(SceneKit.SCNVector4)~System.Single*">
+            <summary>
+            Returns a pointer to the first element of the specified instance.
+            </summary>
+            <param name="v">The instance.</param>
+            <returns>A pointer to the first element of v.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.op_Explicit(SceneKit.SCNVector4)~System.IntPtr">
+            <summary>
+            Returns a pointer to the first element of the specified instance.
+            </summary>
+            <param name="v">The instance.</param>
+            <returns>A pointer to the first element of v.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.ToString">
+            <summary>
+            Returns a System.String that represents the current SCNVector4.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.GetHashCode">
+            <summary>
+            Returns the hashcode for this instance.
+            </summary>
+            <returns>A System.Int32 containing the unique hashcode for this instance.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="obj">The object to compare to.</param>
+            <returns>True if the instances are equal; false otherwise.</returns>
+        </member>
+        <member name="M:SceneKit.SCNVector4.Equals(SceneKit.SCNVector4)">
+            <summary>Indicates whether the current vector is equal to another vector.</summary>
+            <param name="other">A vector to compare with this vector.</param>
+            <returns>true if the current vector is equal to the vector parameter; otherwise, false.</returns>
+        </member>
+    </members>
+</doc>

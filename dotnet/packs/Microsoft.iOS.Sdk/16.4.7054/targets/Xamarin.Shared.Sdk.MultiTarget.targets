@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemGroup Condition=" '$(TargetPlatformIdentifier)' == '$(_PlatformName)' and $([MSBuild]::VersionEquals($(TargetFrameworkVersion), '6.0')) ">
+    <KnownFrameworkReference
+        Update="Microsoft.$(_PlatformName)"
+        DefaultRuntimeFrameworkVersion="16.4.47"
+        LatestRuntimeFrameworkVersion="16.4.47"
+        TargetingPackVersion="16.4.47"
+  />
+  </ItemGroup>
+</Project>
